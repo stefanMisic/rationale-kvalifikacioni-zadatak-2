@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { testRedux as testReduxAction } from '../modules';
 
@@ -12,6 +13,14 @@ const HomeContainer = ({ testData, testRedux }) => (
     >
       Hello, Redux: {testData}
     </button>
+    <Link to="/test">
+      <button
+          type="button"
+          onClick={() => console.log('ROUTE ON TEST!')}
+      >
+          Test React Router!
+      </button>
+    </Link>
   </div>
 );
 
