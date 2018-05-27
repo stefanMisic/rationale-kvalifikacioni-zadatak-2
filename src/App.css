@@ -1,3 +1,361 @@
+body {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+table {
+  border-collapse:collapse
+}
+
+td {
+  font-size: 12px;
+}
+
+th {
+  font-size: 15px;
+}
+
+td, th {
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+}
+
 .App {
-  margin: 25px;
+  flex: 1;
+}
+
+.Body {
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  height: 86%;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: scroll;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 90%;
+}
+
+.FilterButton {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  height: 75px;
+  position: relative;
+  width: 215px;
+}
+
+.FilterButtonName {
+  align-self: flex-end;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 100;
+  margin: 0 0 7px 9px;
+}
+
+.FilterButtonNumber {
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 100;
+  padding: 5px 6px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.FilterButtonSymbol {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 1;
+  margin-left: 10px;
+}
+
+.FilterButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.FilterInfoContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 35px 0 0 12px;
+}
+
+.FilterInfoData {
+  color: #25948b;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  margin-right: 20px;
+}
+
+.Header {
+  align-items: flex-start;
+  background: #25948b;
+  display: flex;
+  flex-direction: row;
+  height: 125px;
+  padding: 0 110px;
+}
+
+.HeaderLeft {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+.HeaderLeftLabel {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin: 17px 0 0 5px;
+}
+
+.HeaderRight {}
+
+.ImageBedouin {
+  margin: 1px 0 0 10px;
+}
+
+.ImageBird {
+  margin-left: 20px;
+}
+
+.ImageCircle {
+  margin-left: 25px;
+}
+
+.ImageLines {
+  margin: 4px 7px 0 0;
+}
+
+.ImageMenu1 {
+  margin-right: 2px;
+}
+
+.ImageMenu2 {
+  margin: -5px 2px 0 5px;
+}
+
+.ImageMenu3 {
+  margin-right: 1px;
+}
+
+.ImageMenu4 {
+  margin: 0 0 0 1px;
+}
+
+.ImageMenu5 {
+  margin: 0 5px 0 4px;
+}
+
+.ImageMenu6 {
+  margin: 0 0 0 2px;
+}
+
+.ImageRectangle {
+  margin: 0 0 3px 30px;
+}
+
+.ImageSearch {
+  margin-top: 10px;
+}
+
+.ItemsView {
+  height: 100%;
+  width: 100%;
+}
+
+.ItemsViewButton {
+  background: #d6d6d8;
+  border: none;
+  color: #25948b;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.ItemsViewHeader {
+  align-items: flex-end;
+  background: #d6d6d8;
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  min-height: 35px;
+  width: 100%;
+}
+
+.NavigationMenu {
+  background: #eff0f2;
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 265px;
+}
+
+.NavigationMenuButton {
+  background: #eff0f2;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  min-height: 50px;
+}
+
+.NavigationMenuButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.NavigationMenuHeader {
+  background: #d6d6d8;
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  justify-content: space-between;
+  min-height: 35px;
+  width: 100%;
+}
+
+.NavigationMenuText {
+  color: #25948b;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.PaginationInfoContainer {
+  color: gray;
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 100;
+  margin: 10px 20px 10px 0;
+}
+
+.SearchInput {
+  border: none;
+  background: #eff0f2;
+  color: #25948b;
+  font-size: 15px;
+  height: 24px;
+  width: 100%;
+}
+
+.SearchInput::placeholder {
+  color: #25948b;
+  font-size: 15px;
+}
+
+.SearchInputButton {
+  background: #25948b;
+  border: none;
+  color: #ffffff;
+  height: 26px;
+  padding: 0 8px;
+}
+
+.SearchInputContainer {
+  background: #eff0f2;
+  display: flex;
+  flex-direction: row;
+  float: right;
+  justify-content: space-between;
+  margin: 10px 10px 25px 0;
+  width: 275px;
+}
+
+.Table {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.TableHeader {
+  background: #d6d6d8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.TableHeaderButton {
+  background: #d6d6d8;
+  border: none;
+}
+
+.TableRow {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.TableRowButton {
+  background: #ffffff;
+  border: none;
+}
+
+@media screen and (max-width: 320px) {
+  .ImageCircle {
+    margin-left: 0;
+  }
+
+  .ImageSearch {
+    margin-left: -20px;
+  }
+
+  .ImageRectangle {
+    margin: 0 0 3px 0;
+  }
+
+  .SearchInput {
+    width: 190px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .ImageBird {
+    margin-left: 0;
+  }
+
+  .FilterButtons {
+    margin-top: 45px;
+  }
+
+  .Header {
+    padding: 0 30px;
+  }
+
+  .HeaderLeftLabel {
+    margin: 11px 0 0 5px;
+  }
+
+  .Table {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Body {
+    flex-direction: column;
+  }
+
+  .NavigationMenu {
+    min-height: 200px;
+    width: 100%;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (min-width: 1980px) {
+  .Header {
+    padding: 0 200px;
+  }
 }
