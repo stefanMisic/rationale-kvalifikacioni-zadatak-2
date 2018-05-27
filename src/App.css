@@ -8,8 +8,18 @@ table {
   border-collapse:collapse
 }
 
-tr {
-  border-bottom: 1 px solid rgba(0, 0, 0, 0.4);
+td {
+  font-size: 12px;
+}
+
+th {
+  font-size: 15px;
+}
+
+td, th {
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
 }
 
 .App {
@@ -75,6 +85,20 @@ tr {
   flex-wrap: wrap;
   margin-top: 25px;
   width: 100%;
+}
+
+.FilterInfoContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 35px 0 0 12px;
+}
+
+.FilterInfoData {
+  color: #25948b;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  margin-right: 20px;
 }
 
 .Header {
@@ -150,8 +174,6 @@ tr {
 }
 
 .ItemsView {
-  display: flex;
-  flex-direction: column;
   height: 100%;
   width: 100%;
 }
@@ -214,13 +236,22 @@ tr {
   margin-top: 8px;
 }
 
+.PaginationInfoContainer {
+  color: gray;
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 100;
+  margin: 10px 20px 10px 0;
+}
+
 .SearchInput {
   border: none;
   background: #eff0f2;
   color: #25948b;
   font-size: 15px;
   height: 24px;
-  width: 215px;
+  width: 100%;
 }
 
 .SearchInput::placeholder {
@@ -237,20 +268,24 @@ tr {
 }
 
 .SearchInputContainer {
-  align-self: flex-end;
   background: #eff0f2;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  margin: 15px 10px 0 0;
+  float: right;
+  justify-content: space-between;
+  margin: 10px 10px 25px 0;
+  width: 275px;
 }
 
 .Table {
   margin-top: 15px;
+  width: 100%;
 }
 
 .TableHeader {
   background: #d6d6d8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .TableHeaderButton {
@@ -258,7 +293,9 @@ tr {
   border: none;
 }
 
-.TableRow {}
+.TableRow {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
 
 .TableRowButton {
   background: #ffffff;
@@ -288,12 +325,20 @@ tr {
     margin-left: 0;
   }
 
+  .FilterButtons {
+    margin-top: 45px;
+  }
+
   .Header {
     padding: 0 30px;
   }
 
   .HeaderLeftLabel {
     margin: 11px 0 0 5px;
+  }
+
+  .Table {
+    margin-top: 20px;
   }
 }
 
@@ -303,7 +348,7 @@ tr {
   }
 
   .NavigationMenu {
-    height: 200px;
+    min-height: 200px;
     width: 100%;
     overflow-y: scroll;
   }

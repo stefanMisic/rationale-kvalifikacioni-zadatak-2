@@ -125,6 +125,11 @@ const products = [
   }
 ]
 
+const filter = {
+  name: "Allocation",
+  items: 12
+}
+
 const ItemsView = () => (
   <div className="ItemsView">
     <div className="ItemsViewHeader">
@@ -133,7 +138,7 @@ const ItemsView = () => (
       <button className="ItemsViewButton" type="button">Details</button>
     </div>
     <div className="SearchInputContainer">
-      <img src={searchInverted} alt="searchInverted" height="26" width="26" className="SearchInputIcon" />
+      <img src={searchInverted} alt="searchInverted" height="26" width="32" className="SearchInputIcon" />
       <input className="SearchInput" placeholder="Search" />
       <button className="SearchInputButton" type="button">Go</button>
     </div>
@@ -146,46 +151,55 @@ const ItemsView = () => (
         </button>
       ))}
     </div>
-    {/* <table className="Table">
-      <thead>
-        <tr className="TableHeader">
-          <th>
-            <button className="TableHeaderButton" type="button">
-              <img src={arrowInverted} alt="arrowInverted" height="26" width="26" className="ImageArrowInverted" />
-            </button>
-          </th>
-          <th>ID</th>
-          <th>Product</th>
-          <th>Month</th>
-          <th>Allocation</th>
-          <th>Nomination</th>
-          <th>Actual</th>
-          <th>Company</th>
-          <th>Port</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody align="center">
-      {products.map(product => (
-        <tr className="TableRow" key={product.id}>
-          <td>
-            <button className="TableRowButton" type="button">
-              <img src={arrow} alt="arrow" height="26" width="26" className="ImageArrow" />
-            </button>
-          </td>
-          <td>{product.id}</td>
-          <td>{product.symbol}</td>
-          <td>{product.month}</td>
-          <td>{product.allocation}</td>
-          <td>{product.nomination}</td>
-          <td>{product.actual}</td>
-          <td>{product.company}</td>
-          <td>{product.port}</td>
-          <td>{product.status}</td>
-        </tr>
-      ))}
-      </tbody>
-    </table> */}
+    <div className="FilterInfoContainer">
+      <div className="FilterInfoData">{`Filtered by: ${filter.name}`}</div>
+      <div className="FilterInfoData" style={{fontWeight: "bold"}}>{`ITEMS (${filter.items})`}</div>
+    </div>
+    <div className="TableContainer">
+      <table className="Table">
+        <thead>
+          <tr className="TableHeader">
+            <th>
+              <button className="TableHeaderButton" type="button">
+                <img src={arrowInverted} alt="arrowInverted" height="26" width="26" className="ImageArrowInverted" />
+              </button>
+            </th>
+            <th>ID</th>
+            <th>Product</th>
+            <th>Month</th>
+            <th>Allocation</th>
+            <th>Nomination</th>
+            <th>Actual</th>
+            <th>Company</th>
+            <th>Port</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody align="center">
+        {products.map(product => (
+          <tr className="TableRow" key={product.id}>
+            <td>
+              <button className="TableRowButton" type="button">
+                <img src={arrow} alt="arrow" height="26" width="26" className="ImageArrow" />
+              </button>
+            </td>
+            <td>{product.id}</td>
+            <td style={{background: product.color, color: "#ffffff", width: "50px"}}>{product.symbol}</td>
+            <td>{product.month}</td>
+            <td>{product.allocation}</td>
+            <td>{product.nomination}</td>
+            <td>{product.actual}</td>
+            <td>{product.company}</td>
+            <td>{product.port}</td>
+            <td style={[product.status ===  "Loading" && {color: "red !important"}, product.status ===  "Finished" && {color: "#25948b !important"}]}>{product.status}</td>
+          </tr>
+        ))}
+        </tbody>
+      </table>
+    </div>
+    <div className="PaginationInfoContainer">
+      {`1-${products.length} of ${products.length} items`}
+    </div>
   </div>
 );
 
